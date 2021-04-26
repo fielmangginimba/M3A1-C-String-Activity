@@ -1,0 +1,44 @@
+//C program that converts a vowel into uppercase
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    char str[100];
+    int i, j = 0, k = -1;
+    
+    //Take input
+    printf("Input a sentence: ");
+    fgets(str, sizeof(str), stdin);
+    
+    //Display output
+    printf("String Converted: ");
+    for(i = 0; i < strlen(str); i++) {
+        if (str[i] == 'a') {
+            str[i] = 'A';
+        } else if (str[i] == 'e') {
+            str[i] = 'E';
+        } else if (str[i] == 'i') {
+            str[i] = 'I';
+        } else if (str[i] == 'o') {
+            str[i] = 'O';
+        } else if (str[i] == 'u') {
+            str[i] = 'U';
+        }
+
+        printf("%c", str[i]);
+        
+        if (str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            j++;
+        } else {
+            k++;
+        }
+        if (str[i] == 32) {
+            k--;
+        }
+    }
+
+    printf("\nString Length: %zu\n", strlen(str));
+    printf("Vowels: %d\n", j);
+    printf("Consonants: %d", k);
+
+    return 0;
+}
